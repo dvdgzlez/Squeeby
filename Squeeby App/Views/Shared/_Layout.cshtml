@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Squeeby App</title>
+
+    <environment include="Development">
+        <link rel="stylesheet" href="~/lib/materialize/css/materialize.css" />
+        <link rel="stylesheet" href="~/css/site.css" />
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="~/lib/materialize/css/materialize.min.css" />
+        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+    </environment>
+</head>
+<body>
+    <nav class="teal darken-1">
+        <div class="nav-wrapper">
+            <a class="brand-logo pointer" asp-area="" asp-controller="Home" asp-action="Index">Squeeby_App</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a asp-area="" asp-controller="Account" asp-action="LogIn">Iniciar sesión</a></li>
+                <li><a asp-area="" asp-controller="Account" asp-action="Register">Registrar</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    @*<partial name="_CookieConsentPartial" />*@
+
+    <main>
+        <div class="container body-content">
+            @RenderBody()
+        </div>
+    </main>
+
+    <footer class="page-footer teal lighten-3">
+        @{
+            if (Url.ActionContext.RouteData.Values["controller"].Equals("Home") &&
+                Url.ActionContext.RouteData.Values["action"].Equals("About"))
+            {
+                <div class="container">
+                    <div class="row">
+                        <div class="col l6 s12">
+                            <h5 class="white-text">Footer Content</h5>
+                            <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+                        </div>
+                        <div class="col l4 offset-l2 s12">
+                            <h5 class="white-text">Links</h5>
+                            <ul>
+                                <li><a class="grey-text text-lighten-3 pointer">Link 1</a></li>
+                                <li><a class="grey-text text-lighten-3 pointer">Link 2</a></li>
+                                <li><a class="grey-text text-lighten-3 pointer">Link 3</a></li>
+                                <li><a class="grey-text text-lighten-3 pointer">Link 4</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+        <div class="footer-copyright teal darken-1">
+            <div class="container">
+                &copy; 2018 - Squeeby App
+            </div>
+        </div>
+    </footer>
+
+    <environment include="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/materialize/js/materialize.js"></script>
+        <script src="~/lib/moment/moment.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        <script src="~/js/squeeby.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/materialize/js/materialize.min.js"></script>
+        <script src="~/lib/moment/moment.js"></script>
+        <script src="~/js/site.min.js" asp-append-version="true"></script>
+        <script src="~/js/squeeby.js" asp-append-version="true"></script>
+    </environment>
+
+    @RenderSection("Scripts", required: false)
+    @{
+        if (ViewData["SiteKey"] != null && ViewData["SiteAction"] != null)
+        {
+            <script src="https://www.google.com/recaptcha/api.js?render=@ViewData["SiteKey"]"></script>
+            <script src="~/js/grecaptcha.js"></script>
+            <script>
+                grecaptchaFn(`@ViewData["SiteKey"]`, `@ViewData["SiteAction"]`);
+            </script>
+        }
+    }
+</body>
+</html>

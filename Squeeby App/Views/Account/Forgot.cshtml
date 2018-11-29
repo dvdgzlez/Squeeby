@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Inicio de sesión";
+}
+
+<h3>Inicio de sesión</h3>
+<div class="row">
+    <div class="row">
+        <div class="col s6 offset-s3">
+            <div class="row">
+                <div class="input-field col s12">
+                    <input type="email" id="email" class="validate" />
+                    <label for="email">Correo</label>
+                    <span class="helper-text"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <input type="hidden" class="hide" id="GoogleReCaptchaResponse" />
+    <div class="row">
+        <div class="col s12 center">
+            <button id="send" class="btn-small teal darken-1">Enviar</button>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/squeeby.email.js"></script>
+    <script src="~/js/Account/forgot.js"></script>
+}

@@ -1,0 +1,8 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/Squeeby App/DesignTimeBuild
+/.vs/Squeeby App/v15/Server/sqlite3
+/Squeeby App/bin/Debug/netcoreapp2.1
+/Squeeby App/obj

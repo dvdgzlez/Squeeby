@@ -1,54 +1,42 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
 for details on configuring this project to bundle and minify static web assets. */
 .pointer {
-    cursor: pointer !important;
-}
+  cursor: pointer !important; }
 
 body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-}
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column; }
 
 main {
-    flex: 1 0 auto;
-}
+  flex: 1 0 auto; }
 
 .page-footer {
-    padding: 0;
-}
+  padding: 0; }
 
 .justify {
-    text-align: justify;
-}
+  text-align: justify; }
 
-.link, .link:visited {
-    cursor: pointer;
-    color: #2196f3;
-    text-decoration: none;
-    transition-duration: 0.3s;
-}
+link, link:visited {
+  cursor: pointer;
+  color: #2196f3;
+  text-decoration: none;
+  transition-duration: 0.3s; }
 
-    .link:hover, .link:focus {
-        color: #1e88e5;
-    }
+link:hover, link:focus {
+  color: #1e88e5; }
 
-.title-text {
-    font-size: 2rem;
-}
+.text-title {
+  font-size: 2rem; }
 
-.subtitle-text {
-    font-size: 1.5rem;
-}
+.text-subtitle {
+  font-size: 1.5rem; }
 
-.normal-text {
-    font-size: 1rem;
-}
+.text-normal {
+  font-size: 1rem; }
 
-.small-text {
-    font-size: 0.8rem;
-}
+.text-small {
+  font-size: 0.8rem; }
 
-.xsmall-text {
-    font-size: 0.5rem;
-}
+.text-xsmall {
+  font-size: 0.5rem; }

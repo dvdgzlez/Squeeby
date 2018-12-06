@@ -1,0 +1,58 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
+for details on configuring this project to bundle and minify static web assets. */
+.pointer {
+    cursor: pointer !important;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+.page-footer {
+    padding: 0;
+}
+
+.justify {
+    text-align: justify;
+}
+
+link {
+    &, &:visited {
+        cursor: pointer;
+        color: #2196f3;
+        text-decoration: none;
+        transition-duration: 0.3s;
+    }
+
+    &:hover, &:focus {
+        color: #1e88e5;
+    }
+}
+
+.text {
+    &-title {
+        font-size: 2rem;
+    }
+
+    &-subtitle {
+        font-size: 1.5rem;
+    }
+
+    &-normal {
+        font-size: 1rem;
+    }
+
+    &-small {
+        font-size: 0.8rem;
+    }
+
+    &-xsmall {
+        font-size: 0.5rem;
+    }
+}

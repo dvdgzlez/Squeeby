@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.28010.2050
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Squeeby_App", "Squeeby App\Squeeby_App.csproj", "{62192615-30FD-4B19-BE41-57A2184C6C43}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Squeeby.IdentityServer", "Squeeby.IdentityServer\Squeeby.IdentityServer.csproj", "{3D80D4D2-FA4E-4D4C-B7F9-A94064595A55}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Squeeby.Infrastructure", "Squeeby.Infrastructure\Squeeby.Infrastructure.csproj", "{A29A6891-C6BA-4203-B143-DD2DCE81DFAD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{62192615-30FD-4B19-BE41-57A2184C6C43}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{62192615-30FD-4B19-BE41-57A2184C6C43}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{62192615-30FD-4B19-BE41-57A2184C6C43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D80D4D2-FA4E-4D4C-B7F9-A94064595A55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D80D4D2-FA4E-4D4C-B7F9-A94064595A55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D80D4D2-FA4E-4D4C-B7F9-A94064595A55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D80D4D2-FA4E-4D4C-B7F9-A94064595A55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A29A6891-C6BA-4203-B143-DD2DCE81DFAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A29A6891-C6BA-4203-B143-DD2DCE81DFAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A29A6891-C6BA-4203-B143-DD2DCE81DFAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A29A6891-C6BA-4203-B143-DD2DCE81DFAD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

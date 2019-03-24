@@ -1,0 +1,11 @@
+C:\Users\jeanp\Source\Repos\Squeeby\Squeeby.IdentityServer\bin\Debug\netcoreapp2.2\Squeeby.IdentityServer.deps.json
+C:\Users\jeanp\Source\Repos\Squeeby\Squeeby.IdentityServer\bin\Debug\netcoreapp2.2\Squeeby.IdentityServer.runtimeconfig.json
+C:\Users\jeanp\Source\Repos\Squeeby\Squeeby.IdentityServer\bin\Debug\netcoreapp2.2\Squeeby.IdentityServer.runtimeconfig.dev.json
+C:\Users\jeanp\Source\Repos\Squeeby\Squeeby.IdentityServer\bin\Debug\netcoreapp2.2\Squeeby.IdentityServer.dll
+C:\Users\jeanp\Source\Repos\Squeeby\Squeeby.IdentityServer\obj\Debug\netcoreapp2.2\Squeeby.IdentityServer.csprojAssemblyReference.cache
+C:\Users\jeanp\Source\Repos\Squeeby\Squeeby.IdentityServer\obj\Debug\netcoreapp2.2\Squeeby.IdentityServer.csproj.CoreCompileInputs.cache
+C:\Users\jeanp\Source\Repos\Squeeby\Squeeby.IdentityServer\obj\Debug\netcoreapp2.2\Squeeby.IdentityServer.RazorAssemblyInfo.cache
+C:\Users\jeanp\Source\Repos\Squeeby\Squeeby.IdentityServer\obj\Debug\netcoreapp2.2\Squeeby.IdentityServer.RazorAssemblyInfo.cs
+C:\Users\jeanp\Source\Repos\Squeeby\Squeeby.IdentityServer\obj\Debug\netcoreapp2.2\Squeeby.IdentityServer.AssemblyInfoInputs.cache
+C:\Users\jeanp\Source\Repos\Squeeby\Squeeby.IdentityServer\obj\Debug\netcoreapp2.2\Squeeby.IdentityServer.AssemblyInfo.cs
+C:\Users\jeanp\Source\Repos\Squeeby\Squeeby.IdentityServer\obj\Debug\netcoreapp2.2\Squeeby.IdentityServer.RazorTargetAssemblyInfo.cache

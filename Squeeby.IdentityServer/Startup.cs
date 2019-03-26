@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
+using IdentityModel;
 using IdentityServer4;
 using IdentityServer4.Models;
 using IdentityServer4.Test;
@@ -27,10 +29,10 @@ namespace Squeeby.IdentityServer
 
 
             services.AddIdentityServer()
-                .AddInMemoryClients(new List<Client>())
-                .AddInMemoryIdentityResources(new List<IdentityResource>())
-                .AddInMemoryApiResources(new List<ApiResource>())
-                .AddTestUsers(new List<TestUser>())
+                .AddInMemoryClients(Configuration.Configuration.GetClients())
+                .AddInMemoryIdentityResources(Configuration.Configuration.GetIdentityResources())
+                .AddInMemoryApiResources(Configuration.Configuration.GetApiResources())
+                .AddTestUsers(Configuration.Configuration.GetTestUsers())
                 .AddDeveloperSigningCredential();
                 
             services.AddAuthentication()

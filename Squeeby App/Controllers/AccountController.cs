@@ -59,9 +59,9 @@ namespace Squeeby_App.Controllers
         }
 
         [HttpPost("forgot")]
-        public async Task<IActionResult> Forgot(string email)
+        public IActionResult Forgot(string email)
         {
-            await _userServices.Forgot(email);
+            _userServices.Forgot(email);
             return Ok();
         }
     }

@@ -1,60 +1,68 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
-using Squeeby_App.Helpers;
+using Microsoft.Extensions.Options;
 using Squeeby_App.Models;
+using Squeeby_App.Services;
+using System.Threading.Tasks;
 
 namespace Squeeby_App.Controllers
 {
     public class AccountController : SqueebyController
     {
-        public AccountController(IConfiguration config) : base(config)
+        private readonly UserServices _userServices;
+        private readonly GreCaptchaModel _greCaptcha;
+
+        public AccountController(UserServices userServices, IOptions<AppSettingsModel> appSettings) : base (appSettings)
         {
+            _userServices = userServices;
+            _greCaptcha = appSettings.Value.GreCaptcha;
         }
 
+        [HttpGet("signin")]
         public IActionResult Login()
         {
-            ViewData["SiteKey"] = GrecaptchaSiteKey;
+            ViewData["SiteKey"] = _greCaptcha.SiteKey;
             ViewData["SiteAction"] = "login";
             return View();
         }
 
-        [HttpPost]
-        public ActionResult Login(LoginModel model)
+        [HttpPost("signin")]
+        public async Task<IActionResult> Login(LoginModel model)
         {
-            UserHelper.Login(model);
+            await _userServices.Login(model);
             return Ok();
         }
 
-        [HttpGet]
+        [HttpGet("register")]
         public IActionResult Register()
         {
-            ViewData["SiteKey"] = GrecaptchaSiteKey;
+            ViewData["SiteKey"] = _greCaptcha.SiteKey;
             ViewData["SiteAction"] = "login";
             return View();
         }
 
         [HttpPost]
-        public ActionResult<bool> Register(RegisterUserModel req)
+        public async Task<IActionResult> Register(RegisterUserModel req)
         {
-            if (!req.User.IsValid(req.ConfirmPassword)) return false;
-            if (!VerifyResponse(req.RecaptchaResponse)) return false;
-            if (!UserHelper.RegisterUser(req.User)) return false;
-            return true;
+            if (!req.User.IsValid(req.ConfirmPassword)) return NotFound();
+            if (!VerifyResponse(req.RecaptchaResponse)) return NotFound();
+            if (!await _userServices.RegisterUser(req.User)) return NotFound();
+            return Ok();
         }
 
-        [HttpGet]
+        [HttpGet("forgot")]
         public IActionResult Forgot()
         {
-            ViewData["SiteKey"] = GrecaptchaSiteKey;
+            ViewData["SiteKey"] = _greCaptcha.SiteKey;
             ViewData["SiteAction"] = "login";
             return View();
         }
 
-        [HttpPost]
-        public ActionResult<bool> Forgot(string email)
+        [HttpPost("forgot")]
+        public async Task<IActionResult> Forgot(string email)
         {
-            UserHelper.Forgot(email);
-            return true;
+            await _userServices.Forgot(email);
+            return Ok();
         }
     }
 }

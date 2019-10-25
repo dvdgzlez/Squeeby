@@ -18,5 +18,8 @@ namespace Squeeby_App.Models
         public string Hostname { get; set; }
         [JsonProperty("error-codes")]
         public List<string> ErrorCodes { get; set; }
+        public void Test()
+        {
+        }
     }
 }
